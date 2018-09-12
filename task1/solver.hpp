@@ -2,8 +2,6 @@
 
 #include <stdio.h>
 #include <math.h>
-#include <cassert>
-#include <vector>
 
 enum AnswerCode {
     ONE_ROOT,
