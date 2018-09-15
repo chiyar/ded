@@ -16,7 +16,7 @@ void SayGoodbye() {
 
 int main() {
     GreetUser();
-    double a, b, c;
+    double a = 0, b = 0, c = 0;
     ReadCoefficients(&a, &b, &c);
     SquareTrinomialSolver solver;
     Answer answer = solver.SolveSquareTrinomial(a, b, c);

@@ -24,9 +24,8 @@ Answer SquareTrinomialSolver::SolveSquareTrinomial(double a, double b, double c)
     if (discriminant < 0) {
         return Answer{0, 0, NO_ROOTS};
     }
-    double x1, x2;
-    x1 = (-b + sqrt(discriminant)) / (2 * a);
-    x2 = (-b - sqrt(discriminant)) / (2 * a);
+    double x1 = (-b + sqrt(discriminant)) / (2 * a);
+    double x2 = (-b - sqrt(discriminant)) / (2 * a);
     return Answer{x1, x2, TWO_ROOTS};
 }
 
