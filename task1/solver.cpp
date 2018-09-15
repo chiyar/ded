@@ -1,12 +1,28 @@
 #include "solver.hpp"
 
+//! Compares number with 0 to the accuracy of epsilon
+//!
+//! @param [in] number   a number to compare
+//! @param [in] epsilon  precision
+//!
+//! @return True if number is almost equal to 0
+bool IsZero(double number, double epsilon) {
+    return std::abs(number) < epsilon;
+}
+
+bool Answer::operator==(const Answer& other) const {
+    return (IsZero(x1 - other.x1, 0.0001)
+            && IsZero(x2 - other.x2, 0.0001)
+            && code == other.code);
+}   
+
 double SquareTrinomialSolver::FindDiscriminant(double a, double b, double c) {
     return b * b - 4 * a * c;
 }
 
 Answer SquareTrinomialSolver::SolveLinearEquation(double k, double b) {
-    if (k == 0) {
-        if(b == 0) {
+    if (IsZero(k, 0.0001)) {
+        if(IsZero(b, 0.0001)) {
             return Answer{0, 0, INF_ROOTS};
         } else {
             return Answer{0, 0, NO_ROOTS};
@@ -17,7 +33,7 @@ Answer SquareTrinomialSolver::SolveLinearEquation(double k, double b) {
 }
 
 Answer SquareTrinomialSolver::SolveSquareTrinomial(double a, double b, double c) {
-    if (a == 0) {
+    if (IsZero(a, 0.0001)) {
         return SolveLinearEquation(b, c);
     }
     double discriminant = FindDiscriminant(a, b, c);

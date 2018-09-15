@@ -14,12 +14,8 @@ struct Answer {
     double x1, x2; 
     AnswerCode code;
     
-    bool operator==(const Answer& other) const {
-        return (x1 == other.x1
-                && x2 == other.x2
-                && code == other.code);
-    }
-}; 
+    bool operator==(const Answer& other) const;
+};
 
 //! Provides an interface to work with square trinomial
 class SquareTrinomialSolver{
