@@ -14,7 +14,7 @@ void SayGoodbye() {
 int main() {
     GreetUser();
 
-    char filename[256];
+    char filename[256]{};
     scanf("%s", filename);
 
     Text text(filename);
