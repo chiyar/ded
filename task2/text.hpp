@@ -25,6 +25,6 @@ private:
 private:
     char* buffer_;
     size_t length_;
-    std::vector<char*> lines_, ends_;
+    std::vector<char*> lines_;
     State state_;
 };
