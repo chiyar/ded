@@ -1,3 +1,4 @@
+#include <cassert>
 #include <cctype>
 #include <stdio.h>
 #include <vector>
@@ -14,6 +15,9 @@ void WordProcessing::PrintLines(const std::vector<char*>& lines) {
 }
 
 bool WordProcessing::StrCmpByBegin(const char* const first, const char* const second) {
+    assert(first);
+    assert(second);
+
     size_t i = 0;
     while (first[i] != '\0' && second[i] != '\0') {
         if (first[i] != second[i]) {
@@ -25,6 +29,8 @@ bool WordProcessing::StrCmpByBegin(const char* const first, const char* const se
 }
 
 size_t WordProcessing::CountOffset(const char* const buffer) {
+    assert(buffer);
+
     size_t offset = 0;
     while (buffer[offset] != '\0') {
         ++offset;
@@ -36,6 +42,9 @@ size_t WordProcessing::CountOffset(const char* const buffer) {
 }
 
 bool WordProcessing::StrCmpByEnd(const char* const first, const char* const second) {
+    assert(first);
+    assert(second);
+
     size_t first_index = CountOffset(first);
     while (!std::isalpha(first[first_index])) {
         if (first[first_index] == '\0') {
