@@ -1,0 +1,29 @@
+def n
+scan n
+
+def a
+def b
+
+assign a 0
+assign b 1
+
+def i
+assign i 0
+while i<n
+{
+    def c
+    assign c a+b
+    print c
+
+    assign a b
+    assign b c
+
+    assign i i+1
+}
+
+assign i 0
+while (2*i)<6
+{
+    print 111
+    assign i i+1
+}

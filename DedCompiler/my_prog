@@ -1,0 +1,12 @@
+def a
+
+assign a 10
+def i
+assign i 0
+while i<10
+{
+    assign a a+2
+    assign i i+1
+}
+
+print a
